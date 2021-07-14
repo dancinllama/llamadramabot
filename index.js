@@ -1,5 +1,4 @@
 const tmi = require('tmi.js');
-const StreamLabsAPI = require('streamlabs');
 const commands = require('./commands');
 const config = require('./config.js');
 const help = require('./commands/help.js');
@@ -16,16 +15,6 @@ const client = new tmi.Client({
     }
 });
 
-//Configuring the StreamLabs NPM for sending alerts through the user's streamlabs / obs stream.
-/*const streamlabs = new StreamLabsAPI({
-    clientId: process.env.STREAMLABS_CLIENT_ID,
-    clientSecret: process.env.STREAMLABS_CLIENT_SECRET,
-    redirectUrl: process.env.STREAMLABS_REDIRECT_URI,
-    scopes: process.env.STREAMLABS_SCOPES,
-});
-
-const { follow, subscription, donation, host } = streamlabs.alerts.types;
-*/
 const regexpCommand = new RegExp(/^!([a-zA-Z0-9]+)(?:\W+)?(.*)?/);
 
 
